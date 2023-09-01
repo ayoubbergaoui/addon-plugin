@@ -1,0 +1,11 @@
+# Utiliser une image de base PostgreSQL
+FROM postgres:alpine
+
+# Mettre en place les variables d'environnement pour PostgreSQL
+ENV POSTGRES_USER=myuser
+ENV POSTGRES_PASSWORD=mypassword
+ENV POSTGRES_DB=mydb
+
+# Exposer le port 5432
+EXPOSE 5432
+

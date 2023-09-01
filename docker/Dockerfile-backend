@@ -1,0 +1,19 @@
+# Utiliser une image de base Python
+FROM python:3.9
+
+# Mettre en place l'environnement de travail
+WORKDIR /app
+
+# Installer les dépendances
+COPY ./backend/requirements.txt /app
+RUN pip install -r requirements.txt
+
+# Copier le code du backend
+COPY ./backend /app
+
+# Exposer le port 5000
+EXPOSE 5000
+
+# Commande pour lancer l'application
+CMD ["python", "app.py"]
+
